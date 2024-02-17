@@ -6,7 +6,7 @@
 #    By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 17:51:41 by alalmeid          #+#    #+#              #
-#    Updated: 2023/12/16 14:19:40 by alalmeid         ###   ########.fr        #
+#    Updated: 2024/02/17 02:32:02 by alalmeid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,11 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rc
 
+# Colors
+
+DEF_COLOR = \033[0;39m
+MAGENTA = \033[0;95m
+
 all:$(NAME)
 
 $(NAME): $(SRC:=.o)
@@ -31,7 +36,8 @@ $(NAME): $(SRC:=.o)
 
 
 clean:
-	$(RM) $(SRC:=.o)
+	@$(RM) $(SRC:=.o)
+	@echo "$(MAGENTA) 🌪️ libft object files cleaned!🌪️"
 
 fclean: clean
 			$(RM) $(NAME)

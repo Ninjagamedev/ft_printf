@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   print_hexadecimal.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 14:09:35 by alalmeid          #+#    #+#             */
-/*   Updated: 2024/02/19 19:01:08 by alalmeid         ###   ########.fr       */
+/*   Created: 2024/02/17 03:58:46 by alalmeid          #+#    #+#             */
+/*   Updated: 2024/02/19 19:33:28 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-// Escreve a string s no file descriptor fd
-
-void	ft_putstr_fd(char *s, int fd)
+int	print_hexadecimal(unsigned int value, char *base)
 {
-	write(fd, s, ft_strlen(s));
+	char	*str;
+	int		len;
+
+	str = ft_hex_to_str(value, base);
+	len = print_string(str);
+	free(str);
+	return (len);
 }

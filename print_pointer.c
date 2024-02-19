@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 14:09:35 by alalmeid          #+#    #+#             */
-/*   Updated: 2024/02/19 19:01:08 by alalmeid         ###   ########.fr       */
+/*   Created: 2024/02/19 16:26:23 by alalmeid          #+#    #+#             */
+/*   Updated: 2024/02/19 20:13:42 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-// Escreve a string s no file descriptor fd
-
-void	ft_putstr_fd(char *s, int fd)
+int	print_pointer(void *num, char *base)
 {
-	write(fd, s, ft_strlen(s));
+	char			*str;
+	unsigned long	n;
+	int				len;
+
+	if (num == 0)
+	{
+		len = print_string("(nil)");
+		return (len);
+	}
+	len = print_string("0x");
+	n = (unsigned long)num;
+	str = ft_hex_to_str(n, base);
+	len += print_string(str);
+	free (str);
+	return (len);
 }

@@ -1,20 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_u_itoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 14:09:35 by alalmeid          #+#    #+#             */
-/*   Updated: 2024/02/19 19:01:08 by alalmeid         ###   ########.fr       */
+/*   Created: 2024/02/19 17:38:00 by alalmeid          #+#    #+#             */
+/*   Updated: 2024/02/19 19:16:00 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Escreve a string s no file descriptor fd
-
-void	ft_putstr_fd(char *s, int fd)
+int	num_len(unsigned int n)
 {
-	write(fd, s, ft_strlen(s));
+	int	len;
+
+	len = 1;
+	while (n >= 10)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
+
+char	*ft_u_itoa(unsigned int n)
+{
+	char			*str;
+	int				len;
+	unsigned int	nb;
+
+	len = num_len(n);
+	nb = n;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	while (len--)
+	{
+		str[len] = nb % 10 + '0';
+		nb /= 10;
+	}
+	return (str);
 }

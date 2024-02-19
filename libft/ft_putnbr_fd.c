@@ -6,13 +6,11 @@
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:18:05 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/12/16 14:18:58 by alalmeid         ###   ########.fr       */
+/*   Updated: 2024/02/17 04:13:49 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// Escreve o inteiro n no file descriptor fd
 
 void	ft_putnbr_fd(int n, int fd)
 {

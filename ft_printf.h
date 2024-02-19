@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 14:09:35 by alalmeid          #+#    #+#             */
-/*   Updated: 2024/02/19 19:01:08 by alalmeid         ###   ########.fr       */
+/*   Created: 2024/02/17 03:23:57 by alalmeid          #+#    #+#             */
+/*   Updated: 2024/02/19 19:32:03 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-// Escreve a string s no file descriptor fd
+# include <stdarg.h>
+# include <unistd.h>
+# include "./libft/libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
-{
-	write(fd, s, ft_strlen(s));
-}
+int	ft_printf(const char *input, ...);
+int	print_character(int c);
+int	print_number(int n);
+int	print_pointer(void *num, char *base);
+int	print_u_number(unsigned int n);
+int	print_string(char *str);
+int	print_hexadecimal(unsigned int value, char *base);
+
+#endif

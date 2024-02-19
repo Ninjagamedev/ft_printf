@@ -6,7 +6,7 @@
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:39:07 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/12/16 14:19:44 by alalmeid         ###   ########.fr       */
+/*   Updated: 2024/02/19 19:33:14 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,7 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
+char		*ft_u_itoa(unsigned int n);
+int			ft_count_hex(unsigned long n);
+char		*ft_hex_to_str(unsigned long n, char *base);
 #endif
